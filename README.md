@@ -43,6 +43,13 @@ If you do not have the `Resources` tab available, you have to enable the advance
 
 Add the card via lovelace to your dashboard. All of the settings can be configured via the visual editor.
 
+### Error Fix
+If your card fails to load properly, change line 146 of init.py (usually found in \homeassistant\custom_components\spotcast) and restart HA. 
+
+From: resp = get_spotify_devices(spotify_media_player)
+To: resp = get_spotify_devices(spotify_media_player, hass)
+(thanks to @PerSterin for finding this solution)
+
 #### Advanced usage
 
 ##### Device filtering
